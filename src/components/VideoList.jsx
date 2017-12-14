@@ -1,19 +1,29 @@
-var VideoList = ({data}) => {
-  var Entries = data.map((video) => {
-    return (<VideoListEntry
-    picture={video.snippet.thumbnails}
-    title={video.snippet.title}
-    description={video.snippet.description} />
+class VideoList extends React.Component {
+  constructor({data}) {
+    super(data);
+    this.Entries = data.map((video, index) => {
+      return (<VideoListEntry
+      picture={video.snippet.thumbnails}
+      title={video.snippet.title}
+      description={video.snippet.description} 
+      index={index}/>
+      );
+    });
+  } 
+  //this.state = some default id
+  
+  render() {
+    return (
+      <div className="video-list media-middle">
+        {this.Entries}
+      </div>
     );
-  });
-  
-  return (
-    <div className="video-list media-middle">
-      {Entries}
-    </div>
-  );
-  
-};
+  }
+}
+
+  // onVideoListEntryClick() {
+  //   //the instance of the video player states changes to the id that shares the title of the item we clicked
+  // }
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
 VideoList.propTypes = {

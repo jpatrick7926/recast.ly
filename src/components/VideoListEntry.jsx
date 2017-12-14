@@ -1,11 +1,11 @@
-var VideoListEntry = ({picture, title, description}) => {
+var VideoListEntry = ({picture, title, description, index}) => {
   return (
     <div className="video-list-entry media-middle">
       <div className="media-left media-middle">
         <img className="media-object" src={picture.default.url} alt="" />
       </div>
       <div className="media-body">
-        <div className="video-list-entry-title">{title}</div>
+        <div className="video-list-entry-title" onClick={() => setVideo(index)}>{title}</div>
         <div className="video-list-entry-detail">{description}</div>
       </div>
     </div>
