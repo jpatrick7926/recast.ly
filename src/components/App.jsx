@@ -13,10 +13,10 @@ class App extends React.Component {
       </nav>
       <div className="row">
         <div className="col-md-7">
-          <VideoPlayer data={exampleVideoData} />
+          <VideoPlayer data={exampleVideoData[0]}/>
         </div>
         <div id="poop"className="col-md-5">
-          <VideoList />
+          <VideoList data={exampleVideoData}/>
         </div>
       </div>
     </div>

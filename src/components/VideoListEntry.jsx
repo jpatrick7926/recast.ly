@@ -1,14 +1,16 @@
-var VideoListEntry = (props) => (
-  <div className="video-list-entry media">
-    <div className="media-left media-middle">
-      <img className="media-object" src={props.snippet.thumbnails.default.url} alt="" />
+var VideoListEntry = ({picture, title, description}) => {
+  return (
+    <div className="video-list-entry media-middle">
+      <div className="media-left media-middle">
+        <img className="media-object" src={picture.default.url} alt="" />
+      </div>
+      <div className="media-body">
+        <div className="video-list-entry-title">{title}</div>
+        <div className="video-list-entry-detail">{description}</div>
+      </div>
     </div>
-    <div className="media-body">
-      <div className="video-list-entry-title">{props.snippet.title}</div>
-      <div className="video-list-entry-detail">{props.snippet.description}</div>
-    </div>
-  </div>
-);
+  );
+};
 
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
@@ -20,6 +22,5 @@ VideoListEntry.propTypes = {
 // `var` declarations will only exist globally where explicitly defined
 window.VideoListEntry = VideoListEntry;
 
-var videos = window.exampleVideoData;
 // {props.snippet.title}
 // {props.snippet.description}
