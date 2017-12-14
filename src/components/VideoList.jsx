@@ -1,12 +1,15 @@
 class VideoList extends React.Component {
-  constructor({data}) {
+  constructor({data, setVideo}) {
     super(data);
+    console.log(setVideo);
     this.Entries = data.map((video, index) => {
       return (<VideoListEntry
       picture={video.snippet.thumbnails}
       title={video.snippet.title}
       description={video.snippet.description} 
-      index={index}/>
+      index={index}
+      setVideo={setVideo}/>
+      
       );
     });
   } 

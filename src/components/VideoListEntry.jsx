@@ -1,4 +1,6 @@
-var VideoListEntry = ({picture, title, description, index}) => {
+var VideoListEntry = ({picture, title, description, index, setVideo}) => {
+  console.log(setVideo);
+  console.log(index);
   return (
     <div className="video-list-entry media-middle">
       <div className="media-left media-middle">

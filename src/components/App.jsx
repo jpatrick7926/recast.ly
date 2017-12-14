@@ -1,6 +1,7 @@
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.setVideo = this.setVideo.bind(this);
     this.state = {
       currentVideo: exampleVideoData[0]
     };
@@ -25,7 +26,8 @@ class App extends React.Component {
           <VideoPlayer data={this.state.currentVideo}/>
         </div>
         <div id="poop"className="col-md-5">
-          <VideoList data={exampleVideoData}/>
+          <VideoList data={exampleVideoData}
+                     setVideo={this.setVideo}/>
         </div>
       </div>
     </div>
