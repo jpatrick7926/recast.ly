@@ -1,24 +1,34 @@
 class VideoList extends React.Component {
   constructor({data, setVideo}) {
     super(data);
-    console.log(setVideo);
-    this.Entries = data.map((video, index) => {
+    console.log('my data', data);
+
+  } 
+
+  entries () { 
+    var myEntryArray = this.props.data.videos.map((video, index) => {
       return (<VideoListEntry
       picture={video.snippet.thumbnails}
       title={video.snippet.title}
       description={video.snippet.description} 
       index={index}
-      setVideo={setVideo}/>
-      
+      setVideo={this.props.setVideo}/>
+    
       );
-    });
-  } 
+    });  
+    return myEntryArray;
+  }
   //this.state = some default id
   
   render() {
+    // console.log('video list render', this.props.data);
+    // console.log(this.Entries);
+    // console.log('videoList render');
+    // console.log(this.props.data);
+    // console.log(this.Entries);
     return (
       <div className="video-list media-middle">
-        {this.Entries}
+        {this.entries()}
       </div>
     );
   }
